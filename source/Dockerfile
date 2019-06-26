@@ -46,7 +46,6 @@ RUN cp /usr/local/php-5.6.31/php.ini-development /usr/local/php5.6.31/etc/php.in
     sed -i "/;extension=php_xsl.dll/a\extension=amqp.so" /usr/local/php5.6.31/etc/php.ini && \
     sed -i "/;extension=php_xsl.dll/a\extension=rdkafka.so" /usr/local/php5.6.31/etc/php.ini && \
     sed -i "/;extension=php_xsl.dll/a\extension=apcu.so" /usr/local/php5.6.31/etc/php.ini && \
-    sed -i "/;extension=php_xsl.dll/a\extension=bcmath.so" /usr/local/php5.6.31/etc/php.ini && \
     sed -i "/;extension=php_xsl.dll/a\extension=xhprof.so" /usr/local/php5.6.31/etc/php.ini && \
     sed -i "/;extension=php_xsl.dll/a\extension=calendar.so" /usr/local/php5.6.31/etc/php.ini && \
     sed -i "/;extension=php_xsl.dll/a\zend_extension=opcache.so" /usr/local/php5.6.31/etc/php.ini && \
