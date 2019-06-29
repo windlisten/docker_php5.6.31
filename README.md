@@ -67,3 +67,19 @@ zookeeper
 
 [Zend Modules]     
 Zend OPcache
+
+## 使用方式
+### php-fpm :  
+nginx conf :    
+```
+    location ~ \.php$ {
+        fastcgi_pass     0.0.0.0:9009;
+        fastcgi_param   SCRIPT_FILENAME /var/www_data$fastcgi_script_name;
+        include         fastcgi_params;
+        try_files $uri =404;
+    }
+```  
+docker run -p9009:9000 -v /your-php-file-path:/var/www_data -d phpdockerio/php7-fpm
+### php-cli :
+alias docker_php='docker run -it --rm --name php -v $PWD:/usr/src/myapp -w /usr/src/myapp wenzhi/php5.6.31 php'      
+docker_php test.php
